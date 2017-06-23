@@ -21,5 +21,5 @@
             "VanXuan\\PdfToText\\": ""
         }
     },
-    "minimum-stability": "1.6.7"
+    "minimum-stability": "dev"
 }
