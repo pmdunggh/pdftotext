@@ -1,0 +1,25 @@
+{
+    "name": "pmdunggh/pdftotext",
+    "version": "1.6.7",
+    "type": "library",
+    "description": "Extract text, image from PDF file",
+    "keywords": ["pdf2text","pdftotext"],
+    "homepage": "http://www.pdftotext.eu",
+    "license": "GNU v3.0",
+    "authors": [
+        {
+            "name": "Christian Vigh",
+            "email": "christian.vigh@wuthering-bytes.com"
+        },
+        {
+            "name": "Pham Minh Dung",
+            "email": "pmdung@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "VanXuan\\PdfToText\\": ""
+        }
+    },
+    "minimum-stability": "dev"
+}
