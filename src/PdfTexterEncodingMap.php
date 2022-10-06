@@ -59,7 +59,7 @@ class PdfTexterEncodingMap extends PdfTexterCharacterMap
 
         // Load the default Adobe character sets, if not already done
         if (self::$GlobalEncodings === false) {
-            $charset_file = dirname(__FILE__) . '/Maps/adobe-charsets.map';
+            $charset_file = implode(DIRECTORY_SEPARATOR, [dirname(__FILE__), '..', 'Maps', 'adobe-charsets.map']);
             /** @noinspection PhpIncludeInspection */
             include($charset_file);
             self::$GlobalEncodings = (isset($adobe_charsets)) ? $adobe_charsets : [];

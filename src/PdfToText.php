@@ -485,14 +485,15 @@ class PdfToText extends PdfObjectBase
             self::$HasMemoryGetPeakUsage = function_exists('memory_get_peak_usage');
 
             // Location of the directory containing CID fonts
-            self::$CIDTablesDirectory = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'CIDTables';
-            self::$FontMetricsDirectory = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'FontMetrics';
+            self::$CIDTablesDirectory = implode(DIRECTORY_SEPARATOR, [dirname(__FILE__), '..', 'CIDTables']);
+            self::$FontMetricsDirectory = implode(DIRECTORY_SEPARATOR, [dirname(__FILE__), '..', 'FontMetrics']);
 
             // The string that contains all the Rtl character prefixes in UTF-8 - An optimization used by the __rtl_process() method
             self::$RtlCharacterPrefixes = implode('', array_keys(self::$RtlCharacterPrefixLengths));
 
             // Build the character classes (used only for testing letters and digits)
             if (self::$CharacterClasses === false) {
+                self::$CharacterClasses = [];
                 for ($ord = 0; $ord < 256; $ord++) {
                     $ch = chr($ord);
 

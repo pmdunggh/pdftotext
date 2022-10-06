@@ -46,7 +46,7 @@ abstract class PdfObjectBase
     public function __construct()
     {
         if (self::$UnicodeToSimpleAscii === false) {
-            $charset_file = dirname(__FILE__) . "/Maps/unicode-to-ansi.map";
+            $charset_file = implode(DIRECTORY_SEPARATOR, [dirname(__FILE__), '..', 'Maps', 'unicode-to-ansi.map']);
             /** @noinspection PhpIncludeInspection */
             include($charset_file);
             self::$UnicodeToSimpleAscii = (isset($unicode_to_ansi)) ? $unicode_to_ansi : [];
