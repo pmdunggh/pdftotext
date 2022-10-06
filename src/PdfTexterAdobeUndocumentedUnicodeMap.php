@@ -1,0 +1,98 @@
+<?php
+namespace VanXuan\PdfToText;
+
+/*==============================================================================================================
+
+    class PdfTexterAdobeUndocumentedUnicodeMap -
+        Sometimes, Unicode maps translate character ids to something in the range 0xF000..0xF0FF (or maybe more).
+    These mapped characters do not correspond to anything else in Unicode, but rather to a special character
+    set.
+    This class is not meant to be instantiated by anything here, but rather used for its $Map property.
+    Note that the $Map array is not complete.
+
+  ==============================================================================================================*/
+
+class PdfTexterAdobeUndocumentedUnicodeMap extends PdfTexterAdobeMap
+{
+    public static $UnicodeMap =
+    [
+        0xF0F0 => 0x30,    // '0' through '9'
+        0xF0EF => 0x31,
+        0xF0EE => 0x32,
+        0xF0ED => 0x33,
+        0xF0EC => 0x34,
+        0xF0EB => 0x35,
+        0xF0EA => 0x36,
+        0xF0E9 => 0x37,
+        0xF0E8 => 0x38,
+        0xF0E7 => 0x39,
+        0xF0DF => 0x41,    // 'A' through 'Z'
+        0xF0DE => 0x42,
+        0xF0DD => 0x43,
+        0xF0DC => 0x44,
+        0xF0DB => 0x45,
+        0xF0DA => 0x46,
+        0xF0D9 => 0x47,
+        0xF0D8 => 0x48,
+        0xF0D7 => 0x49,
+        0xF0D6 => 0x4A,
+        0xF0D5 => 0x4B,
+        0xF0D4 => 0x4C,
+        0xF0D3 => 0x4D,
+        0xF0D2 => 0x4E,
+        0xF0D1 => 0x4F,
+        0xF0D0 => 0x50,
+        0xF0CF => 0x51,
+        0xF0CE => 0x52,
+        0xF0CD => 0x53,
+        0xF0CC => 0x54,
+        0xF0CB => 0x55,
+        0xF0CA => 0x56,
+        0xF0C9 => 0x57,
+        0xF0C8 => 0x58,
+        0xF0C7 => 0x59,
+        0xF0C6 => 0x5A,
+        0xF0BF => 0x61,    // 'a' through 'z'
+        0xF0BE => 0x62,
+        0xF0BD => 0x63,
+        0xF0BC => 0x64,
+        0xF0BB => 0x65,
+        0xF0BA => 0x66,
+        0xF0B9 => 0x67,
+        0xF0B8 => 0x68,
+        0xF0B7 => 0x69,
+        0xF0B6 => 0x6A,
+        0xF0B5 => 0x6B,
+        0xF0B4 => 0x6C,
+        0xF0B3 => 0x6D,
+        0xF0B2 => 0x6E,
+        0xF0B1 => 0x6F,
+        0xF0B0 => 0x70,
+        0xF0AF => 0x71,
+        0xF0AE => 0x72,
+        0xF0AD => 0x73,
+        0xF0AC => 0x74,
+        0xF0AB => 0x75,
+        0xF0AA => 0x76,
+        0xF0A9 => 0x77,
+        0xF0A8 => 0x78,
+        0xF0A7 => 0x79,
+        0xF0A6 => 0x7A,
+        0xF0F1 => 0x2F,    // '/'
+        0xF0E6 => 0x3A,    // ':'
+        0xF0F3 => 0x2D,    // '-'
+        0xF0F8 => 0x28,    // '('
+        0xF0F7 => 0x29,    // ')'
+        0xF0F2 => 0x2E,    // '.'
+        0xF020 => 0x20,    // Space
+        0xF0F9 => 0x27,    // "'"
+        0xF037 => 0xE9,    // &eacute;
+        0xF038 => 0xE8,    // &egrave;
+    ];
+
+
+    public function __construct($object_id, $font_variant)
+    {
+        parent::__construct($object_id, $font_variant, self::$UnicodeMap);
+    }
+}
