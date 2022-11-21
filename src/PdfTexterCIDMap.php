@@ -188,7 +188,7 @@ abstract class PdfTexterCIDMap extends PdfTexterCharacterMap
     }
 
 
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         if (isset($this->Map ['plain'] [$offset])) {
             $ch = $this->Map ['plain'] [$offset];

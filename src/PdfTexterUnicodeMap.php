@@ -281,7 +281,7 @@ class PdfTexterUnicodeMap extends PdfTexterCharacterMap
     }
 
 
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         $code = $this->offsetGetSafe($offset);
 
